@@ -1,0 +1,81 @@
+云主机密码
+IP地址:114.67.140.118（公）
+1.数据库  root  lining@123
+2.服务器  root 	xkGoWE6~
+
+学生账号
+账号:djupup123
+密码:dj1314
+服务器  root xkGoWE6~ 
+IP地址:47.95.237.187（公）
+远程连接密码： 521566
+安装信息:
+apache:   目录:/etc/httpd/        使用:systemctl (start|stop|restart|status) httpd 网站根目录:/webdata
+FTP:      目录:/ftp               使用:systemctl (start|stop|restart|status) vsftpd
+MySQL:    目录:/var/lib/mysql     使用:systemctl (start|stop|restart|status) mysqld
+PHP:      目录:/etc               使用:systemctl (start|stop|restart|status) php-fpm
+
+VSftpd：  用户名:ftpuser 密码:O0iYpYNS65
+Mysql：   用户名:root    密码:root
+
+
+	
+3，为了支持远程访问数据库，执行；
+
+mysql> 
+grant all privileges on *.* to lining@"%" identified by "123456" ;　　　//　　设置用户testuser，可以在远程访问mysql
+
+mysql> flush privileges; //更新权限
+
+这样就创建了一个用户名为xml，密码为xml的用户，可以远程访问数据库。
+4.设置默认访问index.php index.html index.htm
+①.httpd.conf配置文件中加载了mod_rewrite.so模块 //在APACHE里面去配置 
+#LoadModule rewrite_module modules/mod_rewrite.so把前面的警号去掉 
+②.在APACHE里面去配置 ，将里面的AllowOverride None都改为AllowOverride All
+
+星盘	218.75.159.125  daqiang daqiang!@#
+ 		218.75.159.125  liningmysql xingpan,.,.mysql
+
+斗蟹 	222.241.7.155	xiaoq	5tm6NgBbi1IIPrqtr8K65A
+		222.241.7.155	xiaoq	9DIAN19123876asdasdsa.cp.no
+
+		礼包本地:http://www.libao.com/wel.html?pc_hash=bdcfd92996e8c9901832fc1a5800fe98
+		礼包线上:http://libao.haote.com/wel.html?pc_hash=bdcfd92996e8c9901832fc1a5800fe98
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5.	社保（公积金）编号：	03617640
+	苏州市社保个人编号：	0501079780
