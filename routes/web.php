@@ -55,4 +55,4 @@ Route::get('/newview', function () {
 //Route::get('/memeber/info','MemberController@info');
 Route::get('/memeber/info', ['uses' => 'MemberController@info', 'as' => 'memberinfo']);
 
-Route::get('/student/test',['uses'=>'StudentController@test']);
+Route::get('/student/test', ['uses' => 'StudentController@test']);
