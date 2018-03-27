@@ -32,12 +32,12 @@
             <label class="col-sm-2 control-label">性别</label>
 
             <div class="col-sm-5">
-                <label class="radio-inline">
-                    男<input type="radio" name='Student[sex]' value="1" style="margin-left:10px;">
-                </label>
-                <label class="radio-inline">
-                    <input type="radio" name='Student[sex]' value="2" style="margin-left: 20px;">女
-                </label>
+                @foreach($teacher->sex() as $key=>$val)
+                    <label class="radio-inline">
+                        <input type="radio" name='Student[sex]' value="{{$key}}" style="margin-left:20px;">{{$val}}
+                    </label>
+                @endforeach
+
             </div>
             <div class="col-sm-5">
                 <p class="form-control-static text-danger">{{$errors->first('Student.sex')}}</p>

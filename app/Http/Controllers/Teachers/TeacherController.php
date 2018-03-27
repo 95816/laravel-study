@@ -44,7 +44,7 @@ class TeacherController extends Controller
                 'Student.sex' => '学生性别',
             ]);*/
             //Validator 类验证
-            $validator = \Validator::make($request->input(),[
+            $validator = \Validator::make($request->input(), [
                 'Student.name' => 'required|min:2|max:20',
                 'Student.age' => 'required|integer',
                 'Student.sex' => 'required|integer',
@@ -54,12 +54,12 @@ class TeacherController extends Controller
                 'max' => ':attribute 长度不符合要求',
                 'integer' => ':attribute 必须为整数',
 
-            ],[
+            ], [
                 'Student.name' => '学生姓名',
                 'Student.age' => '学生年龄',
                 'Student.sex' => '学生性别',
             ]);
-            if ($validator->fails()){
+            if ($validator->fails()) {
                 return \redirect()->back()->withErrors($validator)->withInput();
             }
 
@@ -71,13 +71,17 @@ class TeacherController extends Controller
                 return \redirect()->back()->with('error', '添加失败!');
             }
         }
-        return view('teachers.create');
+        $teacher = new Teacher();
+        return view('teachers.create', ['teacher' => $teacher]);
     }
 
-
-    public function delete($id)
+    /**
+     * @param $id
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View|\think\response\View
+     */
+    public function update($id)
     {
-        echo $id;
-        die;
+        echo $id;die;
+        return view('teacher.update');
     }
 }
