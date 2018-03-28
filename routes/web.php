@@ -61,6 +61,6 @@ Route::get('/student/test', ['uses' => 'StudentController@test']);
 Route::group(['prefix' => 'teacher', 'middleware' => ['web']], function () {
     Route::get('lists', ['uses' => 'Teachers\TeacherController@index', 'as' => 'teacher.lists']);
     Route::any('create', ['uses' => 'Teachers\TeacherController@create', 'as' => 'teacher.create']);
-    Route::get('update/{id}', ['uses' => 'Teachers\TeacherController@update'])->where(['id'=>'[0-9]+']);
+    Route::any('update/{id}', ['uses' => 'Teachers\TeacherController@update'])->where(['id'=>'[0-9]+']);
     Route::get('delete/{id}', ['uses' => 'Teachers\TeacherController@delete'])->where(['id'=>'[0-9]+']);
 });

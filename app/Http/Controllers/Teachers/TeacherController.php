@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Teachers;
 
+use App\HomeModel\Student;
 use App\Models\TeachersModel\Teacher;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -25,6 +26,7 @@ class TeacherController extends Controller
      */
     public function create(Request $request)
     {
+        $teacher = new Teacher();
         if ($request->isMethod('post')) {
 
             //控制器验证
@@ -71,7 +73,7 @@ class TeacherController extends Controller
                 return \redirect()->back()->with('error', '添加失败!');
             }
         }
-        $teacher = new Teacher();
+
         return view('teachers.create', ['teacher' => $teacher]);
     }
 
@@ -79,9 +81,12 @@ class TeacherController extends Controller
      * @param $id
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View|\think\response\View
      */
-    public function update($id)
+    public function update(Request $request,$id)
     {
-        echo $id;die;
-        return view('teacher.update');
+        $student = Teacher::find($id);
+        if ($request->isMethod('post')){
+            $data = $request->input('Student');
+        }
+        return view('teachers.update',['teacher'=>$student]);
     }
 }
